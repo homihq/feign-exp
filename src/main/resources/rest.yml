@@ -1,0 +1,48 @@
+- name: "postApi"
+  url: "https://mockapi.com/abc"
+  connectTimeOut: 5000
+  readTimeOut: 5000
+  resources:
+    - name: "findById"
+      method: "GET"
+      path: "/{id}"
+      variables:
+        - name: "id"
+          type: "String"
+      response:
+        type: "Post"
+
+    - name: "findAll"
+      method: "GET"
+      path: ""
+      params:
+        - name: "filter"
+          type: "String"
+        - name: "pageNo"
+          type: "int"
+        - name: "size"
+          type: "int"
+      response:
+        type: "Post"
+
+    - name: "create"
+      method: "POST"
+      path: ""
+      body:
+        type: "Post"
+      response:
+        type: "Post"
+
+    - name: "update"
+      method: "PUT"
+      path: ""
+      body:
+        type: "Post"
+      response:
+        type: "Post"
+
+- objectName: "Post"
+    - name: "id"
+      type: "int"
+    - name: "title"
+      type: "String"
